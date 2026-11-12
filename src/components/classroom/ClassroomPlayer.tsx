@@ -14,8 +14,10 @@ import {
 } from "@/lib/game/session";
 import { createTeams, getWinners, rankTeams, type Team, type TeamCount } from "@/lib/game/teams";
 import { translator } from "@/lib/i18n";
+import { readAloudText } from "@/lib/tts/readAloudText";
 import type { Game } from "@/lib/schemas";
 import { burst, celebrate } from "./confetti";
+import { ReadAloudButton } from "./ReadAloudButton";
 import { Scoreboard } from "./Scoreboard";
 import { TEAM_STYLES } from "./teamStyles";
 import { useFullscreen } from "./useFullscreen";
@@ -94,6 +96,8 @@ export function ClassroomPlayer({ game, teamCount, onExit }: ClassroomPlayerProp
   }, []);
 
   const total = itemCount(game);
+  // Matching has no single question to read, so no button there.
+  const spokenText = game.type === "matching" ? null : readAloudText(game.items[state.itemIndex], game.language);
   const progress =
     game.type === "matching"
       ? tr("progress.pairs", { n: state.matchedIds.length, total })
@@ -133,7 +137,16 @@ export function ClassroomPlayer({ game, teamCount, onExit }: ClassroomPlayerProp
           <EndScreen state={state} total={total} tr={tr} teamName={teamName} onPlayAgain={playAgain} onExit={onExit} />
         ) : (
           <>
-            {!solo && <TurnBanner state={state} teamName={teamName} tr={tr} />}
+            {(!solo || spokenText) && (
+              // Same row as the turn banner, so the button costs no extra height at 720p.
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                {!solo && <TurnBanner state={state} teamName={teamName} tr={tr} />}
+                {spokenText && (
+                  // A new key per question remounts the button, which stops the previous audio.
+                  <ReadAloudButton key={`${game.id}-${state.itemIndex}`} text={spokenText} language={game.language} />
+                )}
+              </div>
+            )}
             <GameBoard state={state} act={act} />
             <Feedback state={state} solo={solo} total={total} tr={tr} teamName={teamName} act={act} />
           </>

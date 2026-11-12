@@ -40,6 +40,15 @@ const en = {
   "fullscreen.enter": "Full screen",
   "fullscreen.exit": "Exit full screen",
   "scoreboard": "Scoreboard",
+  "readAloud": "Read aloud",
+  "readAloud.loading": "Loading…",
+  "readAloud.stop": "Stop",
+  "shape.0": "Triangle",
+  "shape.1": "Diamond",
+  "shape.2": "Circle",
+  "shape.3": "Square",
+  "speech.times": "times",
+  "speech.minus": "minus",
 } as const;
 
 export type MessageKey = keyof typeof en;
@@ -79,6 +88,15 @@ const de: Record<MessageKey, string> = {
   "fullscreen.enter": "Vollbild",
   "fullscreen.exit": "Vollbild beenden",
   "scoreboard": "Punktestand",
+  "readAloud": "Vorlesen",
+  "readAloud.loading": "Lädt…",
+  "readAloud.stop": "Stopp",
+  "shape.0": "Dreieck",
+  "shape.1": "Raute",
+  "shape.2": "Kreis",
+  "shape.3": "Quadrat",
+  "speech.times": "mal",
+  "speech.minus": "minus",
 };
 
 const dictionaries: Record<Language, Record<MessageKey, string>> = { en, de };
