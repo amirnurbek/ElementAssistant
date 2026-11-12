@@ -6,6 +6,9 @@ export default defineConfig({
   resolve: {
     // Resolves the "@/*" alias from tsconfig.json (built into Vite 8).
     tsconfigPaths: true,
+    alias: {
+      "server-only": new URL("./src/test/server-only-stub.ts", import.meta.url).pathname,
+    },
   },
   test: {
     environment: "jsdom",

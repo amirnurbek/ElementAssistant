@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { ClassroomPlayer } from "@/components/classroom/ClassroomPlayer";
 import { TeamSetup } from "@/components/classroom/TeamSetup";
 import { GamePreview } from "@/components/preview/GamePreview";
@@ -17,6 +17,8 @@ export interface GameFlowProps {
   game: Game;
   backHref?: string;
   backLabel?: string;
+  /** Extra controls above the preview, e.g. "Change settings" in the create flow. */
+  header?: ReactNode;
 }
 
 /**
@@ -24,7 +26,7 @@ export interface GameFlowProps {
  * The teacher's draft lives here, so going back from the game to the preview
  * keeps their edits. Edits stay in memory only: nothing is saved or sent anywhere.
  */
-export function GameFlow({ game, backHref, backLabel = "Back" }: GameFlowProps) {
+export function GameFlow({ game, backHref, backLabel = "Back", header }: GameFlowProps) {
   const [draft, setDraft] = useState<Game>(game);
   const [step, setStep] = useState<Step>({ name: "preview" });
   const [round, setRound] = useState(0);
@@ -34,11 +36,14 @@ export function GameFlow({ game, backHref, backLabel = "Back" }: GameFlowProps) 
     <div lang={game.language} className="flex w-full flex-1 flex-col">
       {step.name === "preview" && (
         <>
-          {backHref && (
-            <nav className="mx-auto w-full max-w-4xl px-4 pt-4 md:px-8">
-              <Link href={backHref} className="font-bold text-violet-700 hover:underline">
-                ← {backLabel}
-              </Link>
+          {(backHref || header) && (
+            <nav className="mx-auto flex w-full max-w-4xl flex-wrap items-center gap-4 px-4 pt-4 md:px-8">
+              {backHref && (
+                <Link href={backHref} className="font-bold text-violet-700 hover:underline">
+                  ← {backLabel}
+                </Link>
+              )}
+              {header}
             </nav>
           )}
           <GamePreview

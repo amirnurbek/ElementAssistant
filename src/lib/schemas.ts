@@ -56,7 +56,8 @@ const quizItemShape = {
     .array(text(60))
     .min(2, "A question needs at least 2 options")
     .max(4, "A question can have at most 4 options"),
-  correctIndex: z.int().min(0),
+  // Max 3 because there are at most 4 options. The refine below checks it against the real count.
+  correctIndex: z.int().min(0).max(3),
 };
 
 function checkQuizItem(

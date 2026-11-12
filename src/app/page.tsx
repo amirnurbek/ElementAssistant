@@ -33,15 +33,18 @@ export default function Home() {
         ))}
       </ol>
 
-      <div className="flex flex-col items-start gap-3">
-        <p className="text-slate-600">
-          The AI game generator is the next step. For now, try the five ready-made demo games.
-        </p>
+      <div className="flex flex-wrap items-center gap-4">
         <Link
-          href="/demo"
+          href="/create"
           className="inline-block rounded-2xl bg-violet-600 px-8 py-4 text-2xl font-bold text-white shadow hover:bg-violet-700"
         >
-          Try the demo games →
+          ✨ Create a game
+        </Link>
+        <Link
+          href="/demo"
+          className="inline-block rounded-2xl border-4 border-violet-200 bg-white px-8 py-3 text-2xl font-bold text-violet-800 hover:border-violet-400"
+        >
+          Try the demo games
         </Link>
       </div>
     </main>
