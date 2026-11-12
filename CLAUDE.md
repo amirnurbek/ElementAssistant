@@ -1,4 +1,4 @@
-# PlayLesson
+# Element
 
 Web app for elementary school teachers (grades 1–4). The teacher picks subject
 (math, English, science), topic, grade, game type and language (English or German).

@@ -15,7 +15,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/demo/[id]">): Promise<Metadata> {
   const { id } = await params;
   const game = getSampleGame(id);
-  return { title: game ? `${game.title} · PlayLesson` : "Game not found · PlayLesson" };
+  return { title: game ? `${game.title} · Element` : "Game not found · Element" };
 }
 
 /**

@@ -4,7 +4,7 @@ import { SAMPLE_GAMES } from "@/data/samples";
 import { GAME_TYPE_LABELS, SUBJECT_LABELS, countLabel } from "@/lib/labels";
 
 export const metadata: Metadata = {
-  title: "Demo games · PlayLesson",
+  title: "Demo games · Element",
 };
 
 export default function DemoPage() {
@@ -12,7 +12,7 @@ export default function DemoPage() {
     <main className="mx-auto flex w-full max-w-5xl flex-col gap-8 p-4 md:p-8">
       <nav>
         <Link href="/" className="font-bold text-violet-700 hover:underline">
-          ← PlayLesson
+          ← Element
         </Link>
       </nav>
       <header className="flex flex-col gap-2">

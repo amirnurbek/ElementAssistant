@@ -13,7 +13,7 @@ const andika = Andika({
 });
 
 export const metadata: Metadata = {
-  title: "PlayLesson",
+  title: "Element",
   description: "Classroom learning games for grades 1–4",
 };
 

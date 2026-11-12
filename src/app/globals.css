@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
- * PlayLesson is a light-only UI on purpose: it's shown on classroom projectors,
+ * Element is a light-only UI on purpose: it's shown on classroom projectors,
  * where dark backgrounds wash out and bright, high-contrast colors read best.
  */
 @theme {

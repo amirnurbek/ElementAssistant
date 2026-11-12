@@ -13,7 +13,7 @@ export default function Home() {
         <p className="text-6xl" aria-hidden>
           🎲
         </p>
-        <h1 className="text-5xl font-bold md:text-6xl">PlayLesson</h1>
+        <h1 className="text-5xl font-bold md:text-6xl">Element</h1>
         <p className="max-w-2xl text-xl text-slate-700 md:text-2xl">
           Classroom learning games for grades 1–4. Math, English and science, played together on the projector.
         </p>
