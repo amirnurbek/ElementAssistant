@@ -27,15 +27,17 @@ After the hackathon I rebuilt it from scratch as a clean, tested project. <!-- T
 
 ## Screenshots
 
-<!-- TODO: add images to docs/screenshots/ and replace each "coming soon" with ![alt](docs/screenshots/<file>.png) -->
+All screens at 1280×720, the size of a typical classroom projector.
 
-| Screen | Suggested file |
+**Quiz with three teams**: right after a correct answer, with confetti in the team's color.
+
+![Quiz in classroom mode with three teams, after a correct answer](docs/screenshots/quiz-teams.png)
+
+| | |
 |---|---|
-| Demo games list | _coming soon_ <!-- docs/screenshots/demo.png --> |
-| Create form | _coming soon_ <!-- docs/screenshots/create.png --> |
-| Preview and edit | _coming soon_ <!-- docs/screenshots/preview.png --> |
-| Quiz with teams (projector, 1280×720) | _coming soon_ <!-- docs/screenshots/quiz-teams.png --> |
-| End screen | _coming soon_ <!-- docs/screenshots/end.png --> |
+| **Demo games**: five built-in games in English and German<br>![Demo games list](docs/screenshots/demo.png) | **Create a game**: the teacher picks subject, topic, grade, type and language<br>![Create form](docs/screenshots/create.png) |
+| **Preview and edit**: every question can be changed or deleted before playing<br>![Preview and edit screen](docs/screenshots/preview.png) | **Matching game**: matched pairs lock in, every try passes the turn<br>![Matching game with one pair found](docs/screenshots/matching.png) |
+| **End screen**: winner and final scores<br>![End screen showing the winning team](docs/screenshots/end.png) | |
 
 ## Quick start
 
