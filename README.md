@@ -19,7 +19,7 @@
 <!-- TODO: fill in the details below. Keep it short: 3–5 sentences. -->
 
 Element started at the **Major Hacking League hackathon in Linz** <!-- TODO: month and year -->.
-Our team, **[Teammate 1]**, **[Teammate 2]**, **[Teammate 3]** and me <!-- TODO: names, or remove the placeholders you don't need -->, built the first version in <!-- TODO: e.g. "48 hours" -->.
+
 
 <!-- TODO: What problem did you set out to solve? What did the hackathon version do, and how did it go (placement, feedback)? -->
 
